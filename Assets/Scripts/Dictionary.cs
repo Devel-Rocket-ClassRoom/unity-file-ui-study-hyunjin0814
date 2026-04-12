@@ -42,8 +42,8 @@ public class Dictionary : MonoBehaviour
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
-                    string[] parts = line.Split('=');
-                    settingDict[parts[0]] = parts[1];
+                    string[] split = line.Split('=');
+                    settingDict[split[0]] = split[1];
                 }
             }
             Debug.Log($"설정 로드 완료 (항목 {settingDict.Count}개)");
