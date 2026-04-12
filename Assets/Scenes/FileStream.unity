@@ -442,6 +442,8 @@ GameObject:
   m_Component:
   - component: {fileID: 910688668}
   - component: {fileID: 910688667}
+  - component: {fileID: 910688669}
+  - component: {fileID: 910688670}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -456,7 +458,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910688666}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ffa1712223a38a43a6948bb668dd006, type: 3}
   m_Name: 
@@ -476,6 +478,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &910688669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910688666}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914b7c05e85ab144c8a051ac95c48310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FileEncryption
+--- !u!114 &910688670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910688666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95bdb7f14298ffc4ba9dad1144a494cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Dictionary
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
