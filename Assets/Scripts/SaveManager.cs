@@ -16,10 +16,10 @@ public class SaveManager : MonoBehaviour
     private void Start()
     {
         saveDir = Path.Combine(Application.persistentDataPath, "SaveData");
-        save1Path = Path.Combine(Application.persistentDataPath, "SaveData", "save1.txt");
-        save2Path = Path.Combine(Application.persistentDataPath, "SaveData", "save2.txt");
-        save3Path = Path.Combine(Application.persistentDataPath, "SaveData", "save3.txt");
-        copyPath = Path.Combine(Application.persistentDataPath, "SaveData", "save1_backup.txt");
+        save1Path = Path.Combine(saveDir, "save1.txt");
+        save2Path = Path.Combine(saveDir, "save2.txt");
+        save3Path = Path.Combine(saveDir, "save3.txt");
+        copyPath = Path.Combine(saveDir, "save1_backup.txt");
 
         saveData1 = "save-01";
         saveData2 = "save-02";

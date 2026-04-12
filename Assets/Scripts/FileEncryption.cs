@@ -15,9 +15,9 @@ public class FileEncryption : MonoBehaviour
     void Start()
     {
         encryptionDir = Path.Combine(Application.persistentDataPath, "EncryptionData");
-        secretPath = Path.Combine(Application.persistentDataPath, "EncryptionData", "secret.txt");
-        encryptedPath = Path.Combine(Application.persistentDataPath, "EncryptionData", "encrypted.dat");
-        decryptedPath = Path.Combine(Application.persistentDataPath, "EncryptionData", "decrypted.txt");
+        secretPath = Path.Combine(encryptionDir, "secret.txt");
+        encryptedPath = Path.Combine(encryptionDir, "encrypted.dat");
+        decryptedPath = Path.Combine(encryptionDir, "decrypted.txt");
 
         secretData = "Hello Unity World";
     }

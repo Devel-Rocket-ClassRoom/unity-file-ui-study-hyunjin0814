@@ -13,7 +13,7 @@ public class Dictionary : MonoBehaviour
     void Start()
     {
         dictionaryDir = Path.Combine(Application.persistentDataPath, "Dictionary");
-        settingsPath = Path.Combine(Application.persistentDataPath, "Dictionary", "settings.cfg");
+        settingsPath = Path.Combine(dictionaryDir, "settings.cfg");
         initialData = "master_volume=80\nbgm_volume=70\nsfx_volume=90\nlanguage=kr\nshow_damage=true";
         settingDict = new Dictionary<string, string>();
     }
