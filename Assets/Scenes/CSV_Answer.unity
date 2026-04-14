@@ -3389,7 +3389,6 @@ GameObject:
   - component: {fileID: 1213330400}
   - component: {fileID: 1213330403}
   - component: {fileID: 1213330402}
-  - component: {fileID: 1213330401}
   m_Layer: 5
   m_Name: DeffenseStat
   m_TagString: Untagged
@@ -3416,21 +3415,6 @@ RectTransform:
   m_AnchoredPosition: {x: 177, y: -150}
   m_SizeDelta: {x: 75, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1213330401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213330399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9712641508640742bf0774d1bf6e41d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText_Answer
-  editorLang: 0
-  id: 
-  text: {fileID: 1213330402}
 --- !u!114 &1213330402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3451,7 +3435,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD0A4 \uC5C6\uC74C"
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 861fce3f58b5ab04392b05f8d085500e, type: 2}
   m_sharedMaterial: {fileID: -1074175970071494774, guid: 861fce3f58b5ab04392b05f8d085500e, type: 2}
@@ -4415,8 +4401,8 @@ MonoBehaviour:
   textDesc: {fileID: 1723121793}
   textAttack: {fileID: 1059197826}
   textDeffense: {fileID: 1753291010}
-  textAttackStat: {fileID: 2147288851}
-  textDeffenseStat: {fileID: 1213330401}
+  textAttackStat: {fileID: 2147288852}
+  textDeffenseStat: {fileID: 1213330402}
 --- !u!114 &1529051107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6381,7 +6367,6 @@ GameObject:
   - component: {fileID: 2147288850}
   - component: {fileID: 2147288853}
   - component: {fileID: 2147288852}
-  - component: {fileID: 2147288851}
   m_Layer: 5
   m_Name: AttackStat
   m_TagString: Untagged
@@ -6408,21 +6393,6 @@ RectTransform:
   m_AnchoredPosition: {x: -50, y: -150}
   m_SizeDelta: {x: 75, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2147288851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2147288849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9712641508640742bf0774d1bf6e41d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText_Answer
-  editorLang: 0
-  id: 
-  text: {fileID: 2147288852}
 --- !u!114 &2147288852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6443,7 +6413,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD0A4 \uC5C6\uC74C"
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 861fce3f58b5ab04392b05f8d085500e, type: 2}
   m_sharedMaterial: {fileID: -1074175970071494774, guid: 861fce3f58b5ab04392b05f8d085500e, type: 2}

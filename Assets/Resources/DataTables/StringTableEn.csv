@@ -14,8 +14,8 @@ Item4Desc,This is a potion.
 Warrior,Warrior
 Thief,Thief
 Tanker,Tanker
-WarriorDesc,This is Warrior
-ThiefDesc,This is Thief
-TankerDesc,This is Tanker
+WarriorDesc,Normal Warrior
+ThiefDesc,High Attack Thief
+TankerDesc,High defense tanker
 Attack,Attack
 Deffense,Deffense

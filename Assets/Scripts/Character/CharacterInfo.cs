@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,14 @@ public class CharacterInfo : MonoBehaviour
     public LocalizationText_Answer textDesc;
     public LocalizationText_Answer textAttack;
     public LocalizationText_Answer textDeffense;
-    public LocalizationText_Answer textAttackStat;
-    public LocalizationText_Answer textDeffenseStat;
+
+    public TextMeshProUGUI textAttackStat;
+    public TextMeshProUGUI textDeffenseStat;
+
+    private void Start()
+    {
+        SetEmpty();
+    }
 
     public void SetEmpty()
     {
@@ -19,15 +26,14 @@ public class CharacterInfo : MonoBehaviour
         textDesc.id = string.Empty;
         textAttack.id = string.Empty;
         textDeffense.id = string.Empty;
-        textAttackStat.id = string.Empty;
-        textDeffenseStat.id = string.Empty;
+
 
         textName.text.text = string.Empty;
         textDesc.text.text = string.Empty;
         textAttack.text.text = string.Empty;
         textDeffense.text.text = string.Empty;
-        textAttackStat.text.text = string.Empty;
-        textDeffenseStat.text.text = string.Empty;
+        textAttackStat.text = string.Empty;
+        textDeffenseStat.text = string.Empty;
     }
 
     public void SetCharacterData(string characterId)
@@ -44,11 +50,8 @@ public class CharacterInfo : MonoBehaviour
         textAttack.id = data.KeyAttack;
         textDeffense.id = data.KeyDeffense;
 
-        textAttackStat.text.text = data.Attack.ToString();
-        textDeffenseStat.text.text = data.Deffense.ToString();
-
-        textAttackStat.Describe();
-        textDeffenseStat.Describe();
+        textAttackStat.text = data.Attack.ToString();
+        textDeffenseStat.text = data.Deffense.ToString();
 
         textName.OnChangedId();
         textDesc.OnChangedId();
