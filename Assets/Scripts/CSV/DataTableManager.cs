@@ -8,6 +8,10 @@ public static class DataTableManager
     // 맨 아래의 메서드 T Get<T>를 통해 현재 선택된 언어에 맞는 StringTable을 가져옴
     public static StringTable StringTable => Get<StringTable>(DatableIds.String);
 
+    public static ItemTable ItemTable => Get<ItemTable>(DatableIds.Item);
+
+    public static CharacterTable CharacterTable => Get<CharacterTable>(DatableIds.Character);
+
     // 현재 설정된 언어와 무관하게 원하는 언어의 파일 불러옴
 #if UNITY_EDITOR
     public static StringTable GetStringTable(Languages lang)
@@ -41,6 +45,14 @@ public static class DataTableManager
             tables.Add(id, stringTable);
         }
 #endif
+
+        var itemTable = new ItemTable();
+        itemTable.Load(DatableIds.Item);
+        tables.Add(DatableIds.Item, itemTable);
+
+        var characterTable = new CharacterTable();
+        characterTable.Load(DatableIds.Character);
+        tables.Add(DatableIds.Character, characterTable);
     }
     public static void ChangeLanguage(Languages lang)
     {

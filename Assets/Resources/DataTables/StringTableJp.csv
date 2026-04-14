@@ -1,5 +1,21 @@
 ﻿Id,String
-HELLO,(Jp)안녕
-BYE,(Jp)잘가
-YOU DIE,(Jp)죽음
-AAA,Japanese
+,
+HELLO,やあ
+BYE,じゃあな
+YOU DIE,あなたは死ぬ
+Item1Name,剣
+Item2Name,盾
+Item3Name,弓
+Item4Name,ポーション
+Item1Desc,これは剣だ。
+Item2Desc,これは盾だ。
+Item3Desc,これは弓だ。
+Item4Desc,これはポーションだ。
+Warrior,키사(Jp)
+Thief,토적(Jp)
+Tanker,태커(Jp)
+WarriorDesc,키사데스(Jp)
+ThiefDesc,토적데스(Jp)
+TankerDesc,태커데스(Jp)
+Attack,어태크(Jp)
+Deffense,디페수(Jp)

@@ -12,7 +12,7 @@ public class LocalizationText_Answer : MonoBehaviour
     public string id;
     public TextMeshProUGUI text;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         // 실행중이면 이벤트 구독
         if (Application.isPlaying)
@@ -45,7 +45,7 @@ public class LocalizationText_Answer : MonoBehaviour
 #endif
     }
 
-    private void OnChangedId()
+    public void OnChangedId()
     {
         text.text = DataTableManager.StringTable.Get(id);
     }
@@ -85,4 +85,9 @@ public class LocalizationText_Answer : MonoBehaviour
         }
     }
 #endif
+
+    public void Describe()
+    {
+        Variables.OnLanguageChanged -= OnChangeLanguage;
+    }
 }

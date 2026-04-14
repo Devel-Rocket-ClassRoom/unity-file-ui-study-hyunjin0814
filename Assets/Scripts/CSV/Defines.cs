@@ -5,6 +5,12 @@ public enum Languages
     Japanese,
 }
 
+public enum ItemTypes
+{
+    Weapon,
+    Equip,
+    Consumable,
+}
 
 public static class Variables
 {   
@@ -47,4 +53,8 @@ public static class DatableIds
 
     // Variables에서 열거형 변수 Language 값을 (int)로 형변환 해서 일치하는 테이블 Id를 매칭시켜줌
     public static string String => StringTableIds[(int)Variables.Language];
+
+    public static readonly string Item = "ItemTable";
+
+    public static readonly string Character = "CharacterTable";
 }
