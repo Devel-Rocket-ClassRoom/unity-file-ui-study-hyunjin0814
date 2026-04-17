@@ -34,7 +34,7 @@ public class StartWindow : GenericWindow
 
     public void OnContinue()
     {
-        Debug.Log("OnContinue()");
+        windowManager.Open(1);
     }
 
     public void OnNewGame()
@@ -44,6 +44,6 @@ public class StartWindow : GenericWindow
 
     public void OnOption()
     {
-        Debug.Log("OnOption()");
+        windowManager.Open(3);
     }
 }
