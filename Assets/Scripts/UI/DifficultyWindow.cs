@@ -83,7 +83,11 @@ public class DifficultyWindow : GenericWindow
             Directory.CreateDirectory(pathFolder);
         }
 
-        string json = JsonConvert.SerializeObject(selected);
+        Difficulty data = new Difficulty
+        {
+            difficultyId = selected
+        };
+        string json = JsonConvert.SerializeObject(data);
         File.WriteAllText(path, json);
     }
 
@@ -94,8 +98,14 @@ public class DifficultyWindow : GenericWindow
             return false;
         }
         string json = File.ReadAllText(path);
-        selected = JsonConvert.DeserializeObject<int>(json);
+        Difficulty data = JsonConvert.DeserializeObject<Difficulty>(json);
+        selected = data.difficultyId;
 
         return true;
     }
+}
+
+public class Difficulty
+{
+    public int difficultyId;
 }
