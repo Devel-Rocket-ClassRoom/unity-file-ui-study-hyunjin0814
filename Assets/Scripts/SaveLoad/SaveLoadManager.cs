@@ -1,5 +1,5 @@
 using UnityEngine;
-using SaveDataVC = SaveDataV3;
+using SaveDataVC = SaveDataV4;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -13,7 +13,7 @@ public static class SaveLoadManager
 
     public static SaveMode Mode { get; set; } = SaveMode.Text;
 
-    public static int SaveDataVersion { get; } = 3;
+    public static int SaveDataVersion { get; } = 4;
     private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
     private static readonly string[] SaveFileNames =
     {
@@ -77,7 +77,7 @@ public static class SaveLoadManager
                     File.WriteAllBytes(path, CryptoUtil.Encrypt(json));
                     break;
             }
-            
+
             return true;
         }
         catch (System.Exception)

@@ -13,6 +13,7 @@ public class DifficultyWindow : GenericWindow
     private string pathFolder;
     private string path;
 
+
     private void Awake()
     {
         toggles[0].onValueChanged.AddListener(OnEasy);
