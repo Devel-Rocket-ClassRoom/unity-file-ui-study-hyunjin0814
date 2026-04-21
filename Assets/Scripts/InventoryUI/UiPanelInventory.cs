@@ -1,7 +1,8 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
+using static UnityEditor.Progress;
 
 public class UiPanelInventory : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class UiPanelInventory : MonoBehaviour
     public TMP_Dropdown filtering;
 
     public UiInvenSlotList uiInvenSlotList;
+    public CharacterInfo characterInfo;
 
     private string[] sortId = 
     {         
@@ -41,28 +43,6 @@ public class UiPanelInventory : MonoBehaviour
         OnLoad();
     }
 
-    //private void OnDisable()
-    //{
-    //    Variables.OnLanguageChanged -= UpdateLanguage;
-    //}
-
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Alpha1))
-    //    {
-    //        Variables.Language = Languages.Korean;
-    //    }
-
-    //    if (Input.GetKeyDown(KeyCode.Alpha2))
-    //    {
-    //        Variables.Language = Languages.English;
-    //    }
-
-    //    if (Input.GetKeyDown(KeyCode.Alpha3))
-    //    {
-    //        Variables.Language = Languages.Japanese;
-    //    }
-    //}
 
     public void OnChangeSorting(int index)
     {
@@ -104,28 +84,36 @@ public class UiPanelInventory : MonoBehaviour
         uiInvenSlotList.RemoveItem();
     }
 
-    //public void UpdateLanguage()
-    //{
-    //    List<string> sortingOptions = new List<string>();
-    //    List<string> filteringOptions = new List<string>();
+    public void OnEquipItem()
+    {
+        SaveItemData item = uiInvenSlotList.EquipItem();
 
-    //    for (int i = 0; i < sortId.Length; i++)
-    //    {
-    //        sortingOptions.Add(DataTableManager.StringTable.Get(sortId[i]));
-    //        Debug.Log(DataTableManager.StringTable.Get(sortId[i]));
-    //    }
-    //    sorting.ClearOptions();
-    //    sorting.AddOptions(sortingOptions);
-    //    sorting.RefreshShownValue();
+        if (item == null)
+            return;
 
-    //    for (int i = 0; i < filterId.Length; i++)
-    //    {
-    //        filteringOptions.Add(DataTableManager.StringTable.Get(filterId[i]));
-    //        Debug.Log(DataTableManager.StringTable.Get(filterId[i]));
-    //    }
+        // 이미 장착된 장비가 있을 경우
+        if (characterInfo.currentSaveCharacterData.CharacterData.EquippedItems.ContainsKey(item.ItemData.Type))
+        {
+            // 장착된 장비를 인벤토리에 추가
+            uiInvenSlotList.AddItem(characterInfo.currentSaveCharacterData.CharacterData.EquippedItems[item.ItemData.Type]);
+            characterInfo.currentSaveCharacterData.CharacterData.EquippedItems.Remove(item.ItemData.Type);
+        }
+        
+        // 장비를 장착
+        characterInfo.currentSaveCharacterData.CharacterData.EquippedItems.Add(item.ItemData.Type, item);
+        characterInfo.UpdateCharacterData();
+    }
 
-    //    filtering.ClearOptions();
-    //    filtering.AddOptions(filteringOptions);
-    //    filtering.RefreshShownValue();
-    //}
+    public void OnUnEquipItem()
+    {
+        // 장착중인 장비 모두 인벤토리로 해제
+        foreach (var value in characterInfo.currentSaveCharacterData.CharacterData.EquippedItems.Values)
+        {
+            uiInvenSlotList.AddItem(value);
+        }
+
+        // 장비 딕셔너리 초기화
+        characterInfo.currentSaveCharacterData.CharacterData.EquippedItems.Clear();
+        characterInfo.UpdateCharacterData();
+    }
 }

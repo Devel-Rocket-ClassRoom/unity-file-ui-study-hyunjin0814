@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterData
@@ -7,7 +8,6 @@ public class CharacterData
     public string Desc { get; set; }
     public int Attack { get; set; }
     public int Deffense { get; set; }
-    public int Speed { get; set; }
     public string Icon { get; set; }
 
     // 현재 언어 설정에 맞게 이름이나 설명을 가져오려고 추가한 프로퍼티
@@ -15,12 +15,40 @@ public class CharacterData
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
     public string KeyAttack = "Attack";
     public string KeyDeffense = "Deffense";
-    public string KeySpeed = "Speed";
 
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 
+    public Dictionary<ItemTypes, SaveItemData> EquippedItems = new Dictionary<ItemTypes, SaveItemData>();
+
+    public int FinalAttack
+    {
+        get
+        {
+            int total = Attack;
+            if (EquippedItems.ContainsKey(ItemTypes.Weapon))
+            {
+                total += EquippedItems[ItemTypes.Weapon].ItemData.Value;
+            }
+            return total;
+        }
+    }
+
+    public int FinalDeffense
+    {
+        get
+        {
+            int total = Deffense;
+            if (EquippedItems.ContainsKey(ItemTypes.Equip))
+            {
+                total += EquippedItems[ItemTypes.Equip].ItemData.Value;
+            }
+            return total;
+        }
+    }
+
+
     public override string ToString()
     {
-        return $"{Id} / {Name} / {Desc} / {Attack} / {Deffense} / {Speed} / {Icon}";
+        return $"{Id} / {Name} / {Desc} / {Attack} / {Deffense} / {Icon}";
     }
 }

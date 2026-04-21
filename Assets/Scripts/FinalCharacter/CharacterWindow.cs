@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class CharacterWindow : MonoBehaviour
 {
     public UiCharacterSlotList uiCharacterSlotList;
+    public InfoWindow infoWindow;
+    public CharacterInfo characterInfo;
 
     public TMP_Dropdown sorting;
     public TMP_Dropdown filtering;
@@ -50,5 +52,10 @@ public class CharacterWindow : MonoBehaviour
     public void OnRemoveCharacter()
     {
         uiCharacterSlotList.RemoveCharacter();
+    }
+
+    public void OnClickCenter()
+    {
+        infoWindow.Open(characterInfo.currentSaveCharacterData);
     }
 }

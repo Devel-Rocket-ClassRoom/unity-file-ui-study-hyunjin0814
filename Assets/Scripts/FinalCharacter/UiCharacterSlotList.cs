@@ -15,8 +15,6 @@ public class UiCharacterSlotList : MonoBehaviour
         AttackDesc,
         DeffenseAsce,
         DeffenseDesc,
-        SpeedAsce,
-        SpeedDesc,
     }
 
     public enum FilteringOptions
@@ -24,7 +22,6 @@ public class UiCharacterSlotList : MonoBehaviour
         None,
         Attacker,
         Deffenser,
-        Speeder,
     }
 
     public readonly System.Comparison<SaveCharacterData>[] comparisons =
@@ -35,16 +32,13 @@ public class UiCharacterSlotList : MonoBehaviour
         (lhs, rhs) => rhs.CharacterData.Attack.CompareTo(lhs.CharacterData.Attack),
         (lhs, rhs) => lhs.CharacterData.Deffense.CompareTo(rhs.CharacterData.Deffense),
         (lhs, rhs) => rhs.CharacterData.Deffense.CompareTo(lhs.CharacterData.Deffense),
-        (lhs, rhs) => lhs.CharacterData.Speed.CompareTo(rhs.CharacterData.Speed),
-        (lhs, rhs) => rhs.CharacterData.Speed.CompareTo(lhs.CharacterData.Speed),
     };
 
     public readonly System.Func<SaveCharacterData, bool>[] filterings =
     {
         (x) => true,
-        (x) => (x.CharacterData.Attack > x.CharacterData.Deffense && x.CharacterData.Attack > x.CharacterData.Speed),
-        (x) => (x.CharacterData.Deffense > x.CharacterData.Attack && x.CharacterData.Deffense > x.CharacterData.Speed),
-        (x) => (x.CharacterData.Speed > x.CharacterData.Attack && x.CharacterData.Speed > x.CharacterData.Deffense),
+        (x) => (x.CharacterData.Attack >= x.CharacterData.Deffense),
+        (x) => (x.CharacterData.Deffense > x.CharacterData.Attack),
     };
 
     public UiCharacterSlot prefab;

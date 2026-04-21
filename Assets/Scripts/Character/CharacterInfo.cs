@@ -14,9 +14,14 @@ public class CharacterInfo : MonoBehaviour
     public TextMeshProUGUI textAttackStat;
     public TextMeshProUGUI textDeffenseStat;
 
+    public SaveCharacterData currentSaveCharacterData;
+
     private void Start()
     {
-        SetEmpty();
+        if (currentSaveCharacterData.CharacterData == null)
+        {
+            SetEmpty();
+        }
     }
 
     public void SetEmpty()
@@ -26,7 +31,6 @@ public class CharacterInfo : MonoBehaviour
         textDesc.id = string.Empty;
         textAttack.id = string.Empty;
         textDeffense.id = string.Empty;
-
 
         textName.text.text = string.Empty;
         textDesc.text.text = string.Empty;
@@ -44,15 +48,16 @@ public class CharacterInfo : MonoBehaviour
 
     public void SetCharacterData(SaveCharacterData saveCharacterData)
     {
-        CharacterData data = saveCharacterData.CharacterData;
+        currentSaveCharacterData = saveCharacterData;
+        CharacterData data = currentSaveCharacterData.CharacterData;
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;
         textAttack.id = data.KeyAttack;
         textDeffense.id = data.KeyDeffense;
 
-        textAttackStat.text = data.Attack.ToString();
-        textDeffenseStat.text = data.Deffense.ToString();
+        textAttackStat.text = data.FinalAttack.ToString();
+        textDeffenseStat.text = data.FinalDeffense.ToString();
 
         textName.OnChangedId();
         textDesc.OnChangedId();
@@ -63,5 +68,10 @@ public class CharacterInfo : MonoBehaviour
 
         //textAttack.OnChangedId();
         //textDeffense.OnChangedId();
+    }
+
+    public void UpdateCharacterData()
+    {
+        SetCharacterData(currentSaveCharacterData);
     }
 }

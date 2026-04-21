@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using System.Linq;
+using Unity.VisualScripting;
 
 public class UiInvenSlotList : MonoBehaviour
 {
@@ -163,6 +164,13 @@ public class UiInvenSlotList : MonoBehaviour
         UpdateSlots();
     }
 
+    public void AddItem(SaveItemData saveItemData)
+    {
+        saveItemDataList.Add(saveItemData);
+
+        UpdateSlots();
+    }
+
     public void RemoveItem()
     {
         if (selectedSlotIndex == -1)
@@ -172,5 +180,16 @@ public class UiInvenSlotList : MonoBehaviour
 
         saveItemDataList.Remove(uiSlotList[selectedSlotIndex].SaveItemData);
         UpdateSlots();
+    }
+
+    public SaveItemData EquipItem()
+    {
+        SaveItemData item = uiSlotList[selectedSlotIndex].SaveItemData;
+        if (item.ItemData.Type == ItemTypes.Consumable)
+        {
+            return null;
+        }
+        RemoveItem();
+        return item;
     }
 }
