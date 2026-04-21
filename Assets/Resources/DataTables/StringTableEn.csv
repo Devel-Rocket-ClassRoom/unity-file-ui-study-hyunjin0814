@@ -44,3 +44,14 @@ Weapon,Weapon
 Equip,Equip
 Consumable,Consumable
 NonConsumable,NonConsumable
+NameAsce,Name (Asce)
+NameDesc,Name (Desc)
+AttackAsce,Attack (Asce)
+AttackDesc,Attack (Desc)
+DeffenseAsce,Deffense (Asce)
+DeffenseDesc,방Deffense (Desc)
+SpeedAsce,Speed (Asce)
+SpeedDesc,Speed (Desc)
+Attacker,Attacker
+Deffenser,Deffenser
+Speeder,Speeder

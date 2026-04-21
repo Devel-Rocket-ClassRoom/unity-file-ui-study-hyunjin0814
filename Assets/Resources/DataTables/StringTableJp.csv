@@ -44,3 +44,14 @@ Weapon,무기J
 Equip,장비J
 Consumable,소모품J
 NonConsumable,비소모품J
+NameAsce,이름 (오름JP)
+NameDesc,이름 (내림JP)
+AttackAsce,공격 (오름JP)
+AttackDesc,공격 (내림JP)
+DeffenseAsce,방어 (오름JP)
+DeffenseDesc,방어 (내림JP)
+SpeedAsce,속도 (오름JP)
+SpeedDesc,속도 (내림JP)
+Attacker,공격형JP
+Deffenser,방어형JP
+Speeder,속도형JP

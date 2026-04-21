@@ -43,3 +43,14 @@ Weapon,무기
 Equip,장비
 Consumable,소모품
 NonConsumable,비소모품
+NameAsce,이름 (오름)
+NameDesc,이름 (내림)
+AttackAsce,공격 (오름)
+AttackDesc,공격 (내림)
+DeffenseAsce,방어 (오름)
+DeffenseDesc,방어 (내림)
+SpeedAsce,속도 (오름)
+SpeedDesc,속도 (내림)
+Attacker,공격형
+Deffenser,방어형
+Speeder,속도형

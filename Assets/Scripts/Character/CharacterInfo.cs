@@ -36,14 +36,15 @@ public class CharacterInfo : MonoBehaviour
         textDeffenseStat.text = string.Empty;
     }
 
-    public void SetCharacterData(string characterId)
-    {
-        CharacterData data = DataTableManager.CharacterTable.Get(characterId);
-        SetCharacterData(data);
-    }
+    //public void SetCharacterData(string characterId)
+    //{
+    //    CharacterData data = DataTableManager.CharacterTable.Get(characterId);
+    //    SetCharacterData(data);
+    //}
 
-    public void SetCharacterData(CharacterData data)
+    public void SetCharacterData(SaveCharacterData saveCharacterData)
     {
+        CharacterData data = saveCharacterData.CharacterData;
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;

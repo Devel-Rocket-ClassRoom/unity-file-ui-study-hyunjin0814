@@ -31,8 +31,8 @@ public class CharacterButton : MonoBehaviour
         }
     }
 
-    public void OnClick()
-    {
-        characterInfo.SetCharacterData(characterId);
-    }
+    //public void OnClick()
+    //{
+    //    characterInfo.SetCharacterData(characterId);
+    //}
 }
