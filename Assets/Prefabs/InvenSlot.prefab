@@ -347,5 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72d33987014b7784a88f1ba54b859895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiInvenSlot
+  slotIndex: -1
   imageIcon: {fileID: 4440704789714499682}
   textName: {fileID: 8394392565999636685}
+  button: {fileID: 2302196782423086103}

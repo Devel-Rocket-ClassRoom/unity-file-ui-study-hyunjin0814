@@ -1,5 +1,5 @@
 using UnityEngine;
-using SaveDataVC = SaveDataV4;
+using SaveDataVC = SaveDataV5;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -13,7 +13,7 @@ public static class SaveLoadManager
 
     public static SaveMode Mode { get; set; } = SaveMode.Text;
 
-    public static int SaveDataVersion { get; } = 4;
+    public static int SaveDataVersion { get; } = 5;
     private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
     private static readonly string[] SaveFileNames =
     {
@@ -23,6 +23,14 @@ public static class SaveLoadManager
         "Save3"
     };
     public static SaveDataVC Data { get; set; } = new SaveDataVC();
+
+    static SaveLoadManager()
+    {
+        if (!Load())
+        {
+            Debug.Log("생성자 로드 실패");
+        }
+    }
 
     private static string GetSavefilePath(int slot)
     {
@@ -98,8 +106,7 @@ public static class SaveLoadManager
 
         if (!File.Exists(path))
         {
-            Debug.LogError("파일 없음");
-            return false;
+            return Save();
         }
 
         try

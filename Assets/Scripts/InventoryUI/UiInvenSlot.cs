@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class UiInvenSlot : MonoBehaviour
 {
+    public int slotIndex = -1;
 
     public Image imageIcon;
     public TextMeshProUGUI textName;
-
+    public Button button;
     public SaveItemData SaveItemData { get; private set; }
 
     public void SetEmpty()

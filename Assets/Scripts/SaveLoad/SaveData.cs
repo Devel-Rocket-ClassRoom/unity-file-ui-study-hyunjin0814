@@ -1,4 +1,3 @@
-using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -102,6 +101,27 @@ public class SaveDataV4 : SaveDataV2
     public SaveDataV4()
     {
         Version = 4;
+    }
+
+    public override SaveData VersionUp()
+    {
+        SaveDataV5 data = new SaveDataV5();
+        data.Name = Name;
+        data.Gold = Gold;
+        data.ItemList = ItemList;
+        return data;
+    }
+}
+
+[System.Serializable]
+public class SaveDataV5 : SaveDataV4
+{
+    public UiInvenSlotList.SortingOptions sortIndex;
+    public UiInvenSlotList.FilteringOptions filterIndex;
+
+    public SaveDataV5()
+    {
+        Version = 5;
     }
 
     public override SaveData VersionUp()

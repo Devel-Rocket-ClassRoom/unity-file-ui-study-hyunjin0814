@@ -27,3 +27,20 @@ COST,코스트2
 WEAPON,무기2
 EQUIP,장비2
 CONSUMABLE,소모품2
+SAVE,ちょぞう
+LOAD,呼び出し
+ADDITEM,ついかする
+REMOVEITEM, さくじょ
+CreationTimeAsscding,날짜 (しょうじゅん)
+CreationTimeDeccending,날짜 (こうじゅん)
+NameAccending,이름 (しょうじゅん)
+NameDeccending,이름 (こうじゅん)
+CostAccending,코스트 (J오름P)
+CostDeccending,코스트 (J내림P)
+ValueAccending,밸류 (J오름P)
+ValueDeccending,밸류 (J내림P)
+None,없음J
+Weapon,무기J
+Equip,장비J
+Consumable,소모품J
+NonConsumable,비소모품J

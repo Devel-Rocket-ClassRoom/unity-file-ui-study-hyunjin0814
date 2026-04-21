@@ -26,3 +26,20 @@ COST,코스트
 WEAPON,무기
 EQUIP,장비
 CONSUMABLE,소모품
+SAVE,저장
+LOAD,불러오기
+ADDITEM,아이템 추가
+REMOVEITEM,아이템 삭제
+CreationTimeAsscding,날짜 (오름차순)
+CreationTimeDeccending,날짜 (내림차순)
+NameAccending,이름 (오름차순)
+NameDeccending,이름 (내림차순)
+CostAccending,코스트 (오름)
+CostDeccending,코스트 (내림)
+ValueAccending,밸류 (오름)
+ValueDeccending,밸류 (내림)
+None,없음
+Weapon,무기
+Equip,장비
+Consumable,소모품
+NonConsumable,비소모품

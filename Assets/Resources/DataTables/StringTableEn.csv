@@ -27,3 +27,20 @@ COST,코스트3
 WEAPON,무기3
 EQUIP,장비3
 CONSUMABLE,소모품3
+SAVE,Save
+LOAD,Load
+ADDITEM,Add Item
+REMOVEITEM, Remove Item
+CreationTimeAsscding,Date (Ascending)
+CreationTimeDeccending,Date (Descending)
+NameAccending,Name (Ascending)
+NameDeccending,Name (Descending)
+CostAccending,Cost (Ascending)
+CostDeccending,Cost (Descending)
+ValueAccending,Value (Ascending)
+ValudDeccending,Value (Descending)
+None,None
+Weapon,Weapon
+Equip,Equip
+Consumable,Consumable
+NonConsumable,NonConsumable
