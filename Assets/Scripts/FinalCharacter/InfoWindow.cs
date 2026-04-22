@@ -4,6 +4,7 @@ public class InfoWindow : MonoBehaviour
 {
     public UiPanelInventory inventory;
     public CharacterInfo characterInfo;
+    public System.Action OnCloseEvent;
 
     public void Open(SaveCharacterData data)
     {
@@ -27,5 +28,6 @@ public class InfoWindow : MonoBehaviour
     {
         inventory.OnSave();
         gameObject.SetActive(false);
+        OnCloseEvent?.Invoke();
     }
 }

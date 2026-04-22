@@ -127,7 +127,7 @@ public class UiCharacterSlotList : MonoBehaviour
     public void AddWarrior()
     {
         SaveCharacterData warrior = new SaveCharacterData();
-        warrior.CharacterData = DataTableManager.CharacterTable.Get("Character1");
+        warrior.CharacterData = DataTableManager.CharacterTable.Get("Character1").Clone();
         saveCharacterDataList.Add(warrior);
 
         UpdateSlots();
@@ -136,7 +136,7 @@ public class UiCharacterSlotList : MonoBehaviour
     public void AddTanker()
     {
         SaveCharacterData tanker = new SaveCharacterData();
-        tanker.CharacterData = DataTableManager.CharacterTable.Get("Character3");
+        tanker.CharacterData = DataTableManager.CharacterTable.Get("Character3").Clone();
         saveCharacterDataList.Add(tanker);
 
         UpdateSlots();
@@ -145,7 +145,7 @@ public class UiCharacterSlotList : MonoBehaviour
     public void AddThief()
     {
         SaveCharacterData thief = new SaveCharacterData();
-        thief.CharacterData = DataTableManager.CharacterTable.Get("Character2");
+        thief.CharacterData = DataTableManager.CharacterTable.Get("Character2").Clone();
         saveCharacterDataList.Add(thief);
 
         UpdateSlots();

@@ -46,6 +46,19 @@ public class CharacterData
         }
     }
 
+    public CharacterData Clone()
+    {
+        return new CharacterData
+        {
+            Id = this.Id,
+            Name = this.Name,
+            Desc = this.Desc,
+            Attack = this.Attack,
+            Deffense = this.Deffense,
+            Icon = this.Icon,
+            EquippedItems = new Dictionary<ItemTypes, SaveItemData>()
+        };
+    }
 
     public override string ToString()
     {

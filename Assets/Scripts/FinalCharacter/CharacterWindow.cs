@@ -23,6 +23,8 @@ public class CharacterWindow : MonoBehaviour
         createTankerButton.onClick.AddListener(OnCreateTanker);
         createThiefButton.onClick.AddListener(OnCreateThief);
         RemoveCharacterButton.onClick.AddListener(OnRemoveCharacter);
+
+        infoWindow.OnCloseEvent += characterInfo.UpdateCharacterData;
     }
 
     void Start()

@@ -14,7 +14,7 @@ public static class SaveLoadManager
     public static SaveMode Mode { get; set; } = SaveMode.Text;
 
     public static int SaveDataVersion { get; } = 5;
-    private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
+    private static readonly string SaveDirectory = $"{Application.persistentDataPath}/SaveFiles";
     private static readonly string[] SaveFileNames =
     {
         "SaveAuto",
