@@ -16,6 +16,8 @@ public class CharacterInfo : MonoBehaviour
 
     public SaveCharacterData currentSaveCharacterData;
 
+    public UiInvenSlot[] uiEquipedSlots;
+
     private void Start()
     {
         if (currentSaveCharacterData.CharacterData == null)
@@ -68,6 +70,26 @@ public class CharacterInfo : MonoBehaviour
 
         //textAttack.OnChangedId();
         //textDeffense.OnChangedId();
+        var equippedItems = currentSaveCharacterData.CharacterData.EquippedItems;
+
+        if (equippedItems.ContainsKey(ItemTypes.Weapon))
+        {
+            uiEquipedSlots[0].SetItem(equippedItems[ItemTypes.Weapon]);
+        }
+        else
+        {
+            uiEquipedSlots[0].SetEmpty();
+        }
+
+        if (equippedItems.ContainsKey(ItemTypes.Equip))
+        {
+            uiEquipedSlots[1].SetItem(equippedItems[ItemTypes.Equip]);
+        }
+        else
+        {
+            uiEquipedSlots[1].SetEmpty();
+        }
+
     }
 
     public void UpdateCharacterData()

@@ -15,6 +15,7 @@ public class CharacterWindow : MonoBehaviour
     public Button createTankerButton;
     public Button createThiefButton;
     public Button RemoveCharacterButton;
+    public Button saveCharactersButton;
 
     private void Awake()
     {
@@ -22,6 +23,11 @@ public class CharacterWindow : MonoBehaviour
         createTankerButton.onClick.AddListener(OnCreateTanker);
         createThiefButton.onClick.AddListener(OnCreateThief);
         RemoveCharacterButton.onClick.AddListener(OnRemoveCharacter);
+    }
+
+    void Start()
+    {
+        OnLoad();
     }
 
     public void OnCreateWarrior()
@@ -57,5 +63,22 @@ public class CharacterWindow : MonoBehaviour
     public void OnClickCenter()
     {
         infoWindow.Open(characterInfo.currentSaveCharacterData);
+    }
+
+    //public void OnSaveCharacters()
+    //{
+
+    //}
+    public void OnSave()
+    {
+        SaveLoadManager.Data.CharacterList = uiCharacterSlotList.GetSaveCharacterDataList();
+        SaveLoadManager.Save();
+    }
+
+    public void OnLoad()
+    {
+        SaveLoadManager.Load();
+        uiCharacterSlotList.SetSaveCharacterDataList(SaveLoadManager.Data.CharacterList);
+        uiCharacterSlotList.UpdateUi();
     }
 }

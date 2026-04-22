@@ -184,6 +184,10 @@ public class UiInvenSlotList : MonoBehaviour
 
     public SaveItemData EquipItem()
     {
+        if (selectedSlotIndex == -1)
+        {
+            return null;
+        }
         SaveItemData item = uiSlotList[selectedSlotIndex].SaveItemData;
         if (item.ItemData.Type == ItemTypes.Consumable)
         {

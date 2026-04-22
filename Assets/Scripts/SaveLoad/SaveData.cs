@@ -119,6 +119,8 @@ public class SaveDataV5 : SaveDataV4
     public UiInvenSlotList.SortingOptions sortIndex;
     public UiInvenSlotList.FilteringOptions filterIndex;
 
+    public List<SaveCharacterData> CharacterList = new List<SaveCharacterData>();
+
     public SaveDataV5()
     {
         Version = 5;

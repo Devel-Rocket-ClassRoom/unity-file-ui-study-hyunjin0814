@@ -161,4 +161,19 @@ public class UiCharacterSlotList : MonoBehaviour
         saveCharacterDataList.Remove(uiSlotList[selectedSlotIndex].SaveCharacterData);
         UpdateSlots();
     }
+
+    public List<SaveCharacterData> GetSaveCharacterDataList()
+    {
+        return saveCharacterDataList;
+    }
+
+    public void SetSaveCharacterDataList(List<SaveCharacterData> saveData)
+    {
+        saveCharacterDataList = saveData;
+    }
+
+    public void UpdateUi()
+    {
+        UpdateSlots();
+    }
 }
