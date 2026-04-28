@@ -13,6 +13,7 @@ public class CharacterData
     // 현재 언어 설정에 맞게 이름이나 설명을 가져오려고 추가한 프로퍼티
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
+
     public string KeyAttack = "Attack";
     public string KeyDeffense = "Deffense";
 

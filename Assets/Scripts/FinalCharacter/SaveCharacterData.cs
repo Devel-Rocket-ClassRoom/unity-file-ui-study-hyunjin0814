@@ -10,21 +10,10 @@ public class SaveCharacterData
     public CharacterData CharacterData { get; set; }
     public DateTime CreationTime { get; set; }
 
-    //public static SaveItemData GetRandomItem()
-    //{
-    //    SaveItemData newItem = new SaveItemData();
-    //    newItem.ItemData = DataTableManager.ItemTable.GetRandom();
-    //    return newItem;
-    //}
 
     public SaveCharacterData()
     {
         instanceId = Guid.NewGuid();
         CreationTime = DateTime.Now;
     }
-
-    //public override string ToString()
-    //{
-    //    return $"{instanceId}\n{CreationTime}\n{CharacterData.Id}";
-    //}
 }

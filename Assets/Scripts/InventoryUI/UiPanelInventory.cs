@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class UiPanelInventory : MonoBehaviour
 {
@@ -32,14 +29,8 @@ public class UiPanelInventory : MonoBehaviour
         "NonConsumable"
     };
 
-    //private void Awake()
-    //{
-    //    Variables.OnLanguageChanged += UpdateLanguage;
-    //}
-
     private void OnEnable()
     {
-        //UpdateLanguage();
         OnLoad();
     }
 
